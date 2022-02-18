@@ -36,25 +36,22 @@ def history(message):
 
 @go_bot.message_handler(func=lambda message: True)
 def main(message):
-    lv_text = message.text
-    if lv_text == '':
+    if message.text == '':
         return
-    print(lv_text)
 
-    if lv_text == constant.log_day:
+    if message.text == constant.log_day:
         go_bot.reply_to(message, go_main.log_day(message))
         return
-    elif lv_text == constant.log_week:
+    elif message.text == constant.log_week:
         go_bot.reply_to(message, go_main.log_week(message))
         return
-    elif lv_text == constant.log_month:
+    elif message.text == constant.log_month:
         go_bot.reply_to(message, go_main.log_month(message))
         return
-    elif lv_text == constant.log_year:
+    elif message.text == constant.log_year:
         go_bot.reply_to(message, go_main.log_year(message))
         return
     try:
-        lv_text = message.text.lower()
         lv_response = go_main.main(message)
         go_bot.reply_to( message, lv_response )
     except:

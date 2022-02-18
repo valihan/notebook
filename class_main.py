@@ -31,12 +31,18 @@ class cl_main:
     def __init__(self):
         self.mo_db = cl_db(constant.gc_db_name)
 
-    def start(self, is_message):
+    def check_user(self, is_message):
+        # Проверить, есть ли такой пользователь. Если нет - добавить
         if(not self.mo_db.user_exists(is_message.from_user.id)):
             mo_db.add_user(is_message)
+
+    def start(self, is_message):
+        self.check_user(is_message)
         return constant.gc_message_welcome
 
     def main(self, is_message):
+        # Проверить, есть ли такой пользователь.
+        self.check_user(is_message)
         lv_response = ""
         self.dprint("main" + is_message.from_user.first_name + is_message.text )
         try:
