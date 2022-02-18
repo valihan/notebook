@@ -38,7 +38,7 @@ class cl_main:
 
     def start(self, is_message):
         self.check_user(is_message)
-        return constant.gc_message_welcome
+        return constant.gc_msg_welcome
 
     def main(self, is_message):
         # Проверить, есть ли такой пользователь.
