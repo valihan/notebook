@@ -2,7 +2,7 @@ gc_db_name="/db/notebook.db"
 
 gc_msg_error = "Ошибка!"
 gc_msg_report = "🕘 История операций за "
-gc_msg_records_not_found = "Записей не найдено"
+gc_msg_records_not_found = "Записей не найдено!"
 gc_msg_added = "Добавлено"
 
 log_day='Журнал за день'
